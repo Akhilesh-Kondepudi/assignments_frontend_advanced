@@ -1,0 +1,37 @@
+1. What are the different activities that we do using javascript in client side programming?
+A. Form validations, 
+   interaction with temporary & local storage, 
+   make interactive web pages, 
+   send request to server, 
+   send request for data to server, 
+   work as interface between server & user
+
+2. What is JavaScript engine for Safari?
+A. JavaScriptCore
+
+Assignment 2
+~~~~~~~~~~~~~
+
+1. Is it possible to disable JavaScript in browser? If yes, How to disable javascript in browser?
+A. Yes. 
+   a) Settings -> Privacy and Security -> Site Settings -> JavaScript -> Don't allow sites to use javascript
+   b) Developer Tools -> (Control + Shift + P) Command menu -> Disable JavaScript
+
+2. What is the difference between undefined and not defined in JavaScript?
+A. The keyword “undefined” indicates that the accessed variable is declared in the program; however, we have not assigned any value to it.
+   The keyword “not defined” indicates that the accessed variable does not exist in the memory. 
+   So, when we access a variable that is not declared in the program, it will print “not defined” on the console.
+
+3. What are the differences between Java and JavaScript?
+A. a) Java is considered a compiled programming language(whole program at once), 
+   while JavaScript is considered an interpreted scripting language(line by line)
+   b) Java is an object-oriented programming language
+   while lightweight programming language(“scripting language”) 
+   c) Java is a pure object-oriented programming language
+   while Javascript is an object-based scripting language.
+   d) Java requires more memory and is slower in performance of code execution
+   while JavaScript consumes less memory and is fast in performance. (beacuse Java requires JVM (Java Virtual Machine) for compilation
+   while JavaScripts gets compiled and runs on browser)
+
+4. What are JavaScript Data Types?
+A. Stirng, Number(<((2^53)-1)), Boolean, Object, undefined,  null(empty or unknown),  BigInt(>((2^53)-1)), Symbol (unique and immutable data type) 
