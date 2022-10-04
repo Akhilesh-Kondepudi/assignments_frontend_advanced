@@ -1,1 +1,0 @@
-alert("Alert from ClientScripts2.js")

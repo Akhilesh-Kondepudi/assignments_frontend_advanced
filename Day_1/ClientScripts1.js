@@ -1,1 +1,0 @@
-alert("Alert from ClientScripts1.js")
