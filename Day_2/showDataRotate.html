@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table Data</title>
+    </head>
+    <body>
+        <h1>Operations on Array</h1>
+        <hr/><br/>
+        <input type="button" value="Show Data" onclick="fn_showData()"/><br/>
+        <br/><br/>
+        <table style="border: 2px solid blue;" id="tb"></table>
+        <script>
+            tbObj = document.getElementById("tb");
+            function fn_showData(){
+                str = "<tr style='background-color:skyblue;'>";
+                var arr = ["HTML5","CSS3","jQuerry","Angular JS","Bootstrap"];
+                for(var i=0;i<4;i++){
+                    str += "<th>Console</th>"
+                }
+                str += "</tr> <tr>";
+                var count=0;
+                for(var a=0;(a<=arr.length-1);a++){
+                    for(var b=0;b<4;b++){
+                        str += "<td>" + arr[count] + "</td> "
+                        count++;
+                        if(count==5){
+                            count=0;
+                        }
+                    } 
+                str+="</tr>"
+                }
+                tb.innerHTML = str;
+            }
+        </script>
+    </body>
+</html>

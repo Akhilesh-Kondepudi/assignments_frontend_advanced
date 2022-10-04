@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table Data</title>
+    </head>
+    <body>
+        <h1>Operations on Array</h1>
+        <hr/><br/>
+        <input type="button" value="Show Data" onclick="fn_showData()"/><br/>
+        <br/><br/>
+        <table style="border: 2px solid gray;" id="tb"></table>
+        <script>
+            tbObj = document.getElementById("tb");
+            function fn_showData(){
+                str = "";
+                var arr = ["HTML5","CSS3","jQuerry","Angular JS","Bootstrap"];
+                for(i in arr){
+                str += "<tr> <td style='border: 1px solid black; padding-right:10px'>" + i +"</td>" + "<td style='border: 1px solid black; padding-right: 50px'>" + arr[i] + "</td> </tr>"
+                }
+                tb.innerHTML = str;
+            }
+        </script>
+    </body>
+</html>

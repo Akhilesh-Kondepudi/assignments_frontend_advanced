@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List Color</title>
+    </head>
+    <body>
+        <h1>JavaScript Promgramming -- Loops</h1>
+        <hr/>
+        <input type="button" value="Get Data" onclick="fn_getData()"/>
+        <ul id="ulist"></ul>
+        <script>
+            var listObj = document.getElementById("ulist");
+            function fn_getData(){
+                var str = "";
+                for(var i=1;i<6;i++){
+                    //str += "<li>" + "Welcome to JavaScript - " + i + "</li>"
+                    if(i%2==0){
+                        str += "<li style='color: blue'>" + "Welcome to JavaScript - " + i + "</li>"                    
+                    }
+                    else{
+                        str += "<li style='color: green'>" + "Welcome to JavaScript - " + i + "</li>" 
+                    }
+                }
+                listObj.innerHTML = str;
+            }
+        </script>
+    </body>
+</html>
