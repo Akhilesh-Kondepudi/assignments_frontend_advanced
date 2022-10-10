@@ -1,0 +1,6 @@
+1. How to add events to html elements at runtime using javascript?
+A. element.addEventListener( event, function, capture )
+
+   Event − The name of the event you want to apply on the element e.g. click, mouseover, submit, etc.
+   Function − The callback function which will be fired after the event occurred.
+   Capture − Whether the event should be executed in the capturing phase. This checks and displays a boolean value; true or false.

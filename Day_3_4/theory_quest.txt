@@ -1,0 +1,39 @@
+1. What is map() method in Array?
+A. map() takes an array as input and calls a function once for each element in an array and returns an array
+
+2. How to use map() method?
+A. var arrayOutput = arrayInput.map(functionName)
+
+3. How to stop form submission using js
+A. a) <form name="myForm" onsubmit="return validateMyForm();"> 
+
+      <script type="text/javascript">
+      function validateMyForm()
+      {
+          if(check if your conditions are not satisfying)
+              { 
+                  alert("validation failed false");
+                  returnToPreviousPage();
+                  return false;
+              }
+
+         alert("validations passed");
+         return true;
+     }
+     </script>
+
+b) <form onsubmit="validateMyForm();">
+
+   <script type="text/javascript">
+      function validateMyForm()
+      {
+          if(check if your conditions are not satisfying)
+              { 
+                  alert("validation failed false");
+                  event.preventDefault();
+              }
+
+         alert("validations passed");
+         
+     }
+     </script>

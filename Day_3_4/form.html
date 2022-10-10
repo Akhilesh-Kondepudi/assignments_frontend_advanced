@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+    <body>
+       <h1>Form</h1>
+       <hr/>
+       <form action="send.php" method="get" onsubmit="fn_submit()">
+        Customer Name : <input type="text" id="text" autocomplete="off" autofocus/><br/><br/>
+        Source Station : <select id="s1">
+            <option>Hyderabad</option>
+            <option>Bangalore</option>
+            <option>Pune</option>
+            <option>Chennai</option>
+        </select><br/><br/>
+        Destination Station : <select id="s2">
+            <option>Hyderabad</option>
+            <option>Bangalore</option>
+            <option>Pune</option>
+            <option>Chennai</option>
+        </select><br/><br/>
+        Contact Number : <input type="text" id="number" autocomplete="off"/>
+        <br/><br/>
+        <input type="submit" value="Submit"/>
+       </form>
+       <script>
+        function fn_submit(){
+
+        var txtObj = document.getElementById("text");
+        var numObj = document.getElementById("number");
+        var selectObj1 = document.getElementById("s1");
+        var selectObj2 = document.getElementById("s2");  
+
+        if(txtObj.value == ""){
+            alert("Please Fill Customer Name");
+            event.preventDefault();
+            txtObj.focus();
+        }
+        if(selectObj1.value == selectObj2.value){
+            alert("Source and Destination must not be same");
+            event.preventDefault();
+        }
+        if(numObj.value==""){
+            alert("Please Fill Contact Number");
+            event.preventDefault();
+        }
+        
+        var bool = isNaN(numObj.value*2);
+        if(bool==true){
+            alert("Enter Only Numbers");
+            event.preventDefault();
+        }
+
+        if(numObj.value.length!=10){
+            alert("Please Fill 10 Digits");
+            event.preventDefault();
+        }
+        }
+       </script>
+    </body>
+</html>

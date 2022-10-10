@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Branch</title>
+    </head>
+    <body>
+        <h1>Branch</h1>
+        <hr/>
+        <span>Select Branch : </span>
+        <select id="s1" onchange="fn_change()">
+            <option value="hyd.jpg">Hyderabad</option>
+            <option value="pune.jpg">Pune</option>
+            <option value="bang.jpg">Bangalore</option>
+            <option value="che.jpg">Chennai</option>
+        </select>
+        <br/><br/>
+        <img width="180px" height="180px" id="img1" src="hyd.jpg"/>
+    <script>
+        function fn_change(){
+            imgObj = document.getElementById("img1");
+            selObj = document.getElementById("s1");
+            imgObj.src = s1.value;
+        }
+    </script>
+    </body>
+</html>
