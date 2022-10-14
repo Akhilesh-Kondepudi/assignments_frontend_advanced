@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title> Timer 2</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    </head>
+    <body class="bg-dark">
+       
+        <h1 class="display-1 text-center text-light fw-bold mt-5" id="head">00:00:00</h1>
+        <div class="text-center">
+        <input class="btn text-bg-success m-5" type="button" id="st" value="Start"/>
+        <input class="btn text-bg-danger m-5" type="button" id="stop" value="Clear"/>
+        <h1 class="text-light">jQuery Timer</h1>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script>
+
+            $(document).ready(function(){
+                var x;
+                var seconds = 0;
+                var minutes = 0;
+                var hours = 0;
+
+                function pad2(number) {
+                return (number < 10 ? '0' : '') + number;
+                }
+
+                $("#st").click(function() 
+                {
+                  x =  setInterval(function(){
+                    seconds+=1;
+                    if(seconds>59){
+                        seconds=0;
+                        minutes+=1;
+                    }
+                    if(minutes>59){
+                        minutes=0;
+                        hours+=1;
+                    }
+                    
+                    $("#head").html(pad2(hours)+":"+pad2(minutes)+":"+pad2(seconds));
+                },1000)});
+
+                $("#stop").click(function() 
+                {
+                    clearInterval(x);
+                                       
+                    $("#head").html("00:00:00");
+                });
+                
+            })
+        </script>
+    </body>
+</html>

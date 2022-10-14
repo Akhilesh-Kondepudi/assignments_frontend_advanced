@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+	</head>
+	<body>
+
+		<h1 class="display-5 text-dark text-center">jQuery Calculator Example</h1><hr/><br/>
+
+        <div class="text-center p-5 container rounded-3" style="background-color:darkgray; width: 300px;">
+        <input type="text" id="txt"/><br/><br/>
+
+        <input class="btns btn text-bg-dark" type="button" value="1"/>
+        <input class="btns btn text-bg-dark" type="button" value="2"/>
+        <input class="btns btn text-bg-dark" type="button" value="3"/>
+        <input class="btns btn text-bg-dark" type="button" value="0"/>
+        <br/><br/>
+        <input class="btns btn text-bg-dark" type="button" value="4"/>
+        <input class="btns btn text-bg-dark" type="button" value="5"/>
+        <input class="btns btn text-bg-dark" type="button" value="6"/>
+        <input type="button" value="cl" class="clr btn text-bg-secondary"/>
+        <br/><br/>
+        <input class="btns btn text-bg-dark" type="button" value="7"/>
+        <input class="btns btn text-bg-dark" type="button" value="8"/>
+        <input class="btns btn text-bg-dark" type="button" value="9"/>
+        <input type="button" class="eq btn text-bg-secondary" value="="/>
+        <br/><br/>
+        <input class="btns op btn text-bg-secondary" type="button" value="+"/>
+        <input class="btns op btn text-bg-secondary" type="button" value="-"/>
+        <input class="btns op btn text-bg-secondary" type="button" value="*"/>
+        <input class="btns op btn text-bg-secondary" type="button" value="/"/>     
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        		
+		<script>	
+        var s = "";	
+			$(document).ready(function(){
+                $(".btns").click(function(){
+                    s = s + $(this).val();
+                    $("#txt").val(s);
+                })
+                $(".eq").click(function(){
+                    var r = eval(s);
+                    $("#txt").val(r);
+                    s="";
+                })
+                $(".clr").click(function(){
+                    $("#txt").val("");
+                    s="";
+                })
+            })
+		</script>
+		
+	</body>
+</html>

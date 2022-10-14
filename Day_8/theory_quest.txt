@@ -1,0 +1,30 @@
+1. Check the different types of selectors in CSS 
+A. tagname, id based(#), class based(.), parent child, all(*)
+
+2. Find some details about CDN
+A. A content delivery network (CDN) refers to a geographically distributed group of servers 
+   which work together to provide fast delivery of Internet content.A CDN allows for the quick 
+   transfer of assets needed for loading Internet content including HTML pages, javascript files, 
+   stylesheets, images, and videos.While a CDN does not host content and can’t replace the need 
+   for proper web hosting, it does help cache content at the network edge, which improves website 
+   performance. 
+   Improving website load times, Reducing bandwidth costs, Increasing content availability and redundancy,
+   Improving website security. 
+ 
+3. What is the difference between   "this" and  $(this) in jquery programming?
+A. this is the DOM object, whereas $(this) is the jQuery wrapper around same.
+   this returns dom object
+   $this returns jQury object
+   When using this, you can call DOM methods on it, but not jQuery methods. 
+   When using $(this), you can call jQuery methods on it, but not DOM methods.
+
+4. Why do we use $(document).ready() in jQuery?
+A. Code included inside $( document ).ready() will only run once the page Document Object Model (DOM)
+   is ready for JavaScript code to execute. 
+
+6. How to attach one time events in jQuery?
+A. When using one() method, the event handler function is only run ONCE for each element.
+
+7. How to select all textboxes using jQuery selector?
+A. $(":text")
+   It will select all input elements with type="text"

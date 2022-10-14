@@ -1,0 +1,21 @@
+1. How to add / remove events dynamically without using event attributes (eg:  onclick, ...)
+A. document.addEventListener('click',function(e){
+    if(e.target && e.target.id== 'save_data'){
+          //do something
+     }
+ });
+
+   Within addEventListener we specify that the handler should be attached to ‘click’ event. 
+   Please note, this event will be called no matter where you click on the document. 
+   So, within the even handler for this click event, we check the id of target, that is, the clicked element. 
+   Only if it matches our element’s id (save_data), we execute further code.
+
+   btnAdd.addEventListener('click',() => {
+    document.addEventListener('mousemove',handleEvent);
+});
+   
+   removeEventListener()
+
+2. How to destructuring arrays in JavaScript?
+A. let [a, , b] = arr;
+   console.log(a, b);

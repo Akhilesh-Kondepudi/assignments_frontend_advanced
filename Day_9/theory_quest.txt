@@ -1,0 +1,11 @@
+1. How to use next() and prev() methods in jQuery?
+A. The next() method returns the next sibling element of the selected element.
+   $(selector).next()
+   nextAll() - returns all next sibling elements of the selected element
+   nextUntil(stop) - returns all next sibling elements between two given arguments
+
+   The prev() method returns the previous sibling element of the selected element.
+   $(selector).prev()
+   prevAll() - returns all previous sibling elements of the selected element
+   prevUntil(stop) - returns all previous sibling elements between two given arguments
+

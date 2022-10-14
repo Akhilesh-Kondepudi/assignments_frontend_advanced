@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <title>BUI</title>
+    <style>
+        .c2{
+            background-color: blue;
+            color: white;
+        }
+        p{
+            border: 2px solid gray;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .b{
+            font-weight: bold;
+        }
+        .u{
+            text-decoration: underline;
+        }
+        .i{
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>BUI using jQuery</h1>
+    <hr/><br/>
+    <input class="c1" type="button" value="B"/>
+    <input class="c1" type="button" value="U"/>
+    <input class="c1" type="button" value="I"/>
+    <p>This is a test paragraph.This is a test paragraph.This is a test paragraph.
+    This is a test paragraph.This is a test paragraph.This is a test paragraph.
+    This is a test paragraph.This is a test paragraph.This is a test paragraph.
+    This is a test paragraph.This is a test paragraph.This is a test paragraph.
+    This is a test paragraph.This is a test paragraph.This is a test paragraph.
+    This is a test paragraph.This is a test paragraph.This is a test paragraph.
+    This is a test paragraph.This is a test paragraph.This is a test paragraph.
+    </p>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>
+    <script>
+        $(document).ready(function(){
+            $(".c1").click(function(){
+                $(this).toggleClass("c2");
+                if($(this).val()=="B"){
+                    $("p").toggleClass("b");
+                }
+                if($(this).val()=="U"){
+                    $("p").toggleClass("u");
+                }
+                if($(this).val()=="I"){
+                    $("p").toggleClass("i");
+                }
+            })
+        })
+    </script>
+</body>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gallery</title>
+        <style>
+            img{
+                border-radius: 50%;
+                height: 200px;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Gallery</h1>
+        <hr/><br/>
+        <table id="table1">
+            <tr>
+                <td><img src="image1.jpg"></td>
+                <td><img src="image2.jpg"></td>
+                <td><img src="image3.jpg"></td>
+                <td><img src="image4.jpg"></td>
+            </tr>
+            <tr>
+                <td><img src="image1.jpg"></td>
+                <td><img src="image2.jpg"></td>
+                <td><img src="image3.jpg"></td>
+                <td><img src="image4.jpg"></td>
+            </tr>
+            <tr>
+                <td><img src="image1.jpg"></td>
+                <td><img src="image2.jpg"></td>
+                <td><img src="image3.jpg"></td>
+                <td><img src="image4.jpg"></td>
+            </tr>
+            <tr>
+                <td><img src="image1.jpg"></td>
+                <td><img src="image2.jpg"></td>
+                <td><img src="image3.jpg"></td>
+                <td><img src="image4.jpg"></td>
+            </tr>
+            
+        </table>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>
+        <script>
+            
+           $(document).ready(function(){
+               setInterval(function(){
+                $("#table1 tr:even td:odd").fadeToggle(1000);
+                $("#table1 tr:odd td:even").fadeToggle(1000);
+               },1000)
+               
+                setTimeout(function(){setInterval(function(){
+                $("#table1 tr:odd td:odd").fadeToggle(1000);
+                $("#table1 tr:even td:even").fadeToggle(1000);
+               },1000)},1000)
+           })
+        </script>
+    </body>
+</html>

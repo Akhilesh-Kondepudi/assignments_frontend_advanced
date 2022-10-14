@@ -1,0 +1,40 @@
+
+<html>
+    <head>
+        <title>Get Data</title>
+    </head>
+    <body>
+        <h1>Get Data from Server</h1><hr/><br/>
+        Enter Id : <input type="text" id="txt"/>
+        <input type="button" value="Get Data" onclick="fn_getData()"/><br/>
+        <p id="para"></p>
+    </body>
+    <script>
+        async function fn_getLink(){
+        var url = "https://dummy.restapiexample.com/api/v1/employee/"
+        url += document.getElementById("txt").value;
+        if(document.getElementById("txt").value<5){
+        return Promise.resolve(await fetch(url));
+        }
+        else{
+            return Promise.reject("Invalid URL");
+        }
+        //alert(url);
+        }
+        async function fn_getData(){
+            var paraObj = document.getElementById("para");
+            try {
+                var response = await fn_getLink();
+                //alert("OK");
+                var result = await response.json();
+                paraObj.innerHTML = `Id: ${result.data.id}, Employee Name: ${result.data.employee_name}, Employee Salary: 
+                ${result.data.employee_salary}, Employee Age: ${result.data.employee_age}`;
+                }
+            catch(error)
+            {
+                alert(error);
+                paraObj.innerHTML=error;
+            }
+        }
+    </script>
+</html>

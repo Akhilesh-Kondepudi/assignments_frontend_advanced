@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title> Welcome | Bill </title>
+        <style>
+            tb{
+                text-align: center;
+                
+            }
+            form{
+                width: 350px;
+                border: 5px solid black;
+                border-radius: 3px;
+                padding: 15px;
+                background-color: white;
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <br/>
+        <form>
+            <br/>
+            <select id="sel">
+                <option value="2">Chocolate</option>
+                <option value="5">Cookie</option>
+                <option value="10">Biscuit</option>
+            </select>
+            <br/><br/>
+            Enter Quantity : <input type="text" id="quant"/><hr/>
+            <table align="center "id="tb" cellspacing="10px">
+                <tr>
+                    <td><label>Unit Price: </label></td>
+                    <td><input type="text" id="price"/></td>
+                </tr>
+                <tr>
+                    <td><label>Quantity: </label></td>
+                    <td><input type="text" id="quantity"/></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Get Total" onclick="cal()"/></td>
+                    <td></td>
+                </tr>
+                    
+            </table>
+            <hr/>
+            <p id="para"></p>
+            <hr/>
+            <p id="para2"></p>
+        </form>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script>
+            function cal(){
+            $(document).ready(function(){
+                var x = $("#price").val();
+                var y = $("#quantity").val();
+                $("#para").html("&nbsp&nbspTotal is " + (x*y));
+                var a = $("#sel").val();
+                var b = $("#quant").val();
+                $("#para2").html("&nbsp&nbspTotal2 is " + (a*b));
+            })
+            }
+        </script>
+    </body>
+</html>

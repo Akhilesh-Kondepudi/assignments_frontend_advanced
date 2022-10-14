@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Random Number</title>
+    </head>
+    <body>
+        <h1>Random Number</h1><hr/><br/>
+        <input type="button" value="Get Data" onclick="fn_getData()"/>
+    </body>
+    <script>     
+        function fn_getData(){
+        const numberPromise = new Promise((resolve,reject) => {
+            
+            var num = Math.floor(Math.random() * 50)+1;
+            console.log("The random number is " + num)
+            
+            if(num % 5 == 0){
+                resolve(num);
+            }
+            else{
+                reject("Error! Number is not a multiple of 5");
+            }
+        });
+
+        numberPromise.then((response) =>
+        {
+            console.log("The number is " + response + " and it is a multiple of 5");
+        })
+        .catch((errorMessage) =>
+        {
+            console.log(errorMessage);
+        });
+    }
+
+    </script>
+</html>

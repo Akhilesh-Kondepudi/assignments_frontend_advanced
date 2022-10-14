@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get data</title>
+        <style>
+            tr td{
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Data Filtration using JavaScript</h1><hr/><br/>
+        Search Value : <input type="text" id="txt"/>
+        <input type="button" value="Find By Empno." onclick="fn_no()"/>
+        <input type="button" value="Find By Job." onclick="fn_name()"/>
+        <br/><br/>
+        <table style="border: 2px solid gray;" id="table1" cellspacing="2px" cellpadding="2px">
+            <tr>
+                <th style="border: 1px solid black;">Empno.</th>
+                <th style="border: 1px solid black;">Ename</th>
+                <th style="border: 1px solid black;">Job</th>
+                <th style="border: 1px solid black;">Salary</th>
+                <th style="border: 1px solid black;">Deptno.</th>
+            </tr>
+        </table>
+    </body>
+    <script>
+        
+        var arr = [
+            {empno: 1234, ename:"Scott", job: "Analyst", salary: 50000,deptno: 1111},
+            {empno: 1235, ename:"Sam", job: "Analyst", salary: 50000,deptno: 1111},
+            {empno: 1236, ename:"Shyam", job: "Senior Analyst", salary: 75000,deptno: 1111},
+            {empno: 1237, ename:"Ram", job: "Senior Analyst", salary: 75000,deptno: 1111},
+            {empno: 1238, ename:"Bheem", job: "Manager", salary: 90000,deptno: 1111},
+            {empno: 1239, ename:"Roy", job: "Manager", salary: 90000,deptno: 1111},
+            {empno: 1240, ename:"Raju", job: "Senior Manager", salary: 100000,deptno: 1111},
+            {empno: 1241, ename:"James", job: "Senior Manager", salary: 100000,deptno: 1111}
+        ];
+
+        function fn_no(){
+            var ipObj = document.getElementById("txt");
+            var filObj = arr.filter(ele => ele.empno == ipObj.value);
+            console.log(filObj);
+            fn_addRows(filObj);
+        }
+
+        function fn_name(){
+            var ipObj = document.getElementById("txt");
+            var filObj = arr.filter(ele => ele.job == ipObj.value);
+            console.log(filObj);
+            fn_addRows(filObj);
+        }
+        
+        var tableObj = document.getElementById("table1");
+
+        function fn_addRows(Obj){		
+                        
+		    var  tableObj =  document.getElementById("table1");	 
+
+            var len = tableObj.rows.length;
+
+            for(let i=1;i<len;i++){
+                tableObj.deleteRow(-1);
+            }
+
+            for(let item  of  Obj){
+				var  row1 =  tableObj.insertRow(-1);			
+				var  cell1 =  row1.insertCell(-1);
+				var  cell2 =  row1.insertCell(-1);
+				var  cell3 =  row1.insertCell(-1);
+				var  cell4 =  row1.insertCell(-1);
+				var  cell5 =  row1.insertCell(-1);
+            
+				cell1.innerHTML = item.empno;						
+				cell2.innerHTML = item.ename;						
+				cell3.innerHTML = item.job;
+				cell4.innerHTML = item.salary;
+				cell5.innerHTML = item.deptno;
+            }
+        }
+        
+    </script>
+</html>

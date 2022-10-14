@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Div</title>
+        <style>
+            #div2{
+                border: 2px solid gray;
+                text-align: center;
+                width: 300px;
+                height: 250px;
+                border-radius: 15px;
+                float: left;
+                margin: 10px;
+            }
+            
+            img{
+                padding-top: 10px;
+                border-radius: 50%;
+            }
+            #name{
+                color: red;
+                text-decoration: underline;
+            }
+            #mail{
+                color: blue;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Server Communication using AJAX</h1>
+        <hr/>
+        <br/>
+        <input id="btn" type="button" value="Get Users"/>
+        <br/><br/>
+    
+    </body>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $.ajax({
+                    url : "https://reqres.in/api/users",
+                    type: "GET",
+                    success: function(response){
+                        var str="";
+                        for(var i of response.data){
+                        str = "<img src = '" + i.avatar + "'/>" + "<p id='name'>" + i.first_name + " " + i.last_name + "</p>" + "<p id='mail'>"+ i.email + "</p>";
+                        $("body").append("<div id='div2'>"+str+"</div>");
+                       
+                    }
+                    }
+                })
+            })
+        })
+    </script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add</title>
+    </head>
+    <body>
+        <h1>Add Rows</h1>
+        <hr/><br/>
+        <input type="text" id="txt1" placeholder="Enter Product Name"/> 
+        <input type="text" id="txt2" placeholder="Unit Price"/> 
+        <input type="text" id="txt3" placeholder="Units in Stock"/> 
+        <input id ="btn" type="button" value="Add Row"/> <br/><br/>
+        <table id="table1" border="2" width="400px">
+            <tr>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Units In Stock</th>
+            </tr>
+         </table> 
+         <br/>
+         
+         <script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>
+         <script>
+            $(document).ready(function(){
+                $("#btn").click(function(){
+                    var str="<tr>";
+                    for(var i=1;i<4;i++){
+                    str += "<td>" + $(`#txt${i}`).val() + "</td>";
+                    }
+                    str+="</td>";
+                    $("#table1 tr:last").after(str);
+                })
+            })
+         </script>
+    </body>
+</html>
